@@ -1,10 +1,7 @@
 #include "serialmonitor.h"
 #include "ui_serialmonitor.h"
-//#include "console.h"
 
 #include <QtSerialPort/QSerialPortInfo>
-#include <QIntValidator>
-#include <QLineEdit>
 #include <QScrollBar>
 #include <QMessageBox>
 #include <QtSerialPort/QSerialPort>
@@ -16,13 +13,12 @@ SerialMonitor::SerialMonitor(QWidget *parent) :
     ui->setupUi(this);
     setBaudRate();
     setSerilaPort();
-//    connect(serial, static_cast<void (QSerialPort::*)(QSerialPort::SerialPortError)>(&QSerialPort::error),
-//                this, &SerialMonitor::handleError);
+    serial = new QSerialPort(this);
+    connect(serial, SIGNAL(error(QSerialPort::SerialPortError)), this,
+                SLOT(handleError(QSerialPort::SerialPortError)));
+    connect(serial, SIGNAL(readyRead()), this, SLOT(recieveSerialData()));
+//    connect(console, SIGNAL(getData()), this, SLOT(sendSerialData()));
 
-    //! [2]
-        connect(serial, &QSerialPort::readyRead, this, &SerialMonitor::recieveSerialData);
-    //! [2]
-//        connect(console, &SerialMonitor::on_sen, this, &SerialMonitor::sendSerialData);
 }
 
 SerialMonitor::~SerialMonitor()
@@ -54,11 +50,7 @@ void SerialMonitor::openSerialPort(){
     Settings p = settings1();
     serial->setBaudRate(p.baudrate);
     serial->setPortName(p.name);
-    if (serial->open(QIODevice::ReadWrite)) {
-//        showStatusMessage(tr("Connected to %1 ")
-//                                  .arg(p.name));
 
-            }
 
 }
 
@@ -85,6 +77,7 @@ void SerialMonitor::sendSerialData(){
     QString str = ui->SerialInputConsole->toPlainText();
     QByteArray data(str.toStdString().c_str());
     serial->write(data);
+    ui->serialConsole->append("Your input: "+QString(data));
     ui->SerialInputConsole->clear();
 
 }
