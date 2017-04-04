@@ -365,7 +365,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>CELL_8</string>
+      <string>CELL_13</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_14">
@@ -378,7 +378,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>CELL_9</string>
+      <string>CELL_14</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_15">
@@ -391,7 +391,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>CELL_10</string>
+      <string>CELL_15</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_16">
@@ -404,7 +404,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>CELL_11</string>
+      <string>CELL_16</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_17">
@@ -417,7 +417,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>CELL_11</string>
+      <string>CELL_17</string>
      </property>
     </widget>
    </widget>
@@ -428,7 +428,7 @@
      <x>0</x>
      <y>0</y>
      <width>681</width>
-     <height>21</height>
+     <height>19</height>
     </rect>
    </property>
   </widget>
