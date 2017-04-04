@@ -1,7 +1,7 @@
 # QtTest_1
 
 <h3><br> Serial Monitor </h3>
-<br> It was a trial to learn Qt, by imitating Arduino Serial Monitor gui, in QT . It is no successfull, but gives a rough idea <br>
+<br> It was a trial to learn Qt, by imitating Arduino Serial Monitor gui, in QT . It is not so successfull, but gives a rough idea <br>
 of what are basics of QSerialPort and other advantages of Qt
 
 <hr>
