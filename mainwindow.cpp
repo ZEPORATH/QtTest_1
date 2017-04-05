@@ -117,7 +117,7 @@ void MainWindow::updateLCDs(QString serialBuffer1)
 
 void MainWindow::on_start_push_button_clicked()
 {
-    bool arduino_is_available = false;
+    bool arduino_is_available = true;
     QString arduino_uno_port_name = ui->SerialPortBox->currentText();
     qint32 baudRate = static_cast<QSerialPort::BaudRate>(
                 ui->BaudRateBox->itemData(ui->BaudRateBox->currentIndex()).toInt());
@@ -164,7 +164,7 @@ void MainWindow::logger_mgr(QString s)
 {
     // Set the logging file
         // check which a path to file you use
-        QString filename = "C:\\log.txt";
+        QString filename = "log.txt";
         QFile file(filename);
         // Open the file logging
         if(file.open(QFile::Append | QFile::Text)){
@@ -181,13 +181,17 @@ void MainWindow::on_logger_checkBox_stateChanged(int arg1)
     if(ui->logger_checkBox->isChecked()){
         if(arduino->isOpen()){
             startlogging = true;
+            qDebug()<<"Inside Logger l2 \n";
         }
         else{
             startlogging=false;
         }
-//        qDebug()<<"Inside Logger l2 \n";
+//       qDebug()<<"Inside Logger l2 \n";
 //        startlogging = true;
 //        logger_mgr("heloo");
     }
+    else{
+
      startlogging=false;
+    }
 }
