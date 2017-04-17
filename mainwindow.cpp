@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "control_box.h"
 //#include "logger.h"
 
 #include <QtCore/QCoreApplication>
@@ -193,5 +194,14 @@ void MainWindow::on_logger_checkBox_stateChanged(int arg1)
     else{
 
      startlogging=false;
+    }
+}
+
+void MainWindow::on_CONTROL_checkBox_stateChanged(int arg1)
+{
+    if(ui->CONTROL_checkBox->isChecked()){
+        Control_BOX control_box;
+        control_box.setModal(true);
+        control_box.exec();
     }
 }
