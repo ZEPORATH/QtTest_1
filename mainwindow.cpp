@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "control_box.h"
+
 //#include "logger.h"
 
 #include <QtCore/QCoreApplication>
@@ -10,6 +10,7 @@
 #include <QTextStream>
 #include <QDateTime>
 #include <QLoggingCategory>
+
 
 // Smart pointer to log file
 QScopedPointer<QFile>   m_logFile;
@@ -197,11 +198,27 @@ void MainWindow::on_logger_checkBox_stateChanged(int arg1)
     }
 }
 
-void MainWindow::on_CONTROL_checkBox_stateChanged(int arg1)
+
+void MainWindow::on_CONTROL_pushButton_clicked()
 {
-    if(ui->CONTROL_checkBox->isChecked()){
-        Control_BOX control_box;
-        control_box.setModal(true);
-        control_box.exec();
-    }
+
+    contol_window = new Contol_window(this);
+    contol_window->raise();
+    contol_window->activateWindow();
+    contol_window->show();
+
+
+
+}
+
+void MainWindow::on_actionQuit_triggered()
+{
+    QApplication::quit();
+}
+
+
+void MainWindow::on_actionEdit_PORT_triggered()
+{
+    port_settings = new PortSettings(this);
+    port_settings->show();
 }
