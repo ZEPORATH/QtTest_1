@@ -1,289 +1,947 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Control_BOX</class>
- <widget class="QDialog" name="Control_BOX">
+ <class>Contol_window</class>
+ <widget class="QMainWindow" name="Contol_window">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
     <width>742</width>
-    <height>618</height>
+    <height>733</height>
    </rect>
   </property>
-  <property name="windowTitle">
-   <string>Dialog</string>
+  <property name="focusPolicy">
+   <enum>Qt::ClickFocus</enum>
   </property>
-  <widget class="QLabel" name="label">
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>-19</x>
+      <y>580</y>
+      <width>761</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_2">
+    <property name="geometry">
+     <rect>
+      <x>461</x>
+      <y>10</y>
+      <width>281</width>
+      <height>301</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QPushButton" name="DSG_ON_pushButton">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>20</y>
+       <width>101</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);
+font: 75 11pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(85, 255, 0);
+ border-style: solid;
+ border-width:4px;
+ border-radius:20px;
+ border-color: red;
+ max-width:400px;
+ max-height:400px;
+ min-width:20px;
+ min-height:20px;
+</string>
+     </property>
+     <property name="text">
+      <string>DSG_ON</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="CC_pushButton">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>20</y>
+       <width>101</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);
+font: 75 11pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(85, 255, 0);
+ border-style: solid;
+ border-width:4px;
+ border-radius:20px;
+ border-color: red;
+ max-width:400px;
+ max-height:400px;
+ min-width:20px;
+ min-height:20px;
+</string>
+     </property>
+     <property name="text">
+      <string>CC</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="DELAY_DIS_pushButton">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>90</y>
+       <width>101</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);
+font: 75 11pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(85, 255, 0);
+ border-style: solid;
+ border-width:4px;
+ border-radius:20px;
+ border-color: red;
+ max-width:400px;
+ max-height:400px;
+ min-width:20px;
+ min-height:20px;
+</string>
+     </property>
+     <property name="text">
+      <string>DELAY_DIS</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="CHG_ON_pushButton">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>90</y>
+       <width>101</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);
+font: 75 11pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(85, 255, 0);
+ border-style: solid;
+ border-width:4px;
+ border-radius:20px;
+ border-color: red;
+ max-width:400px;
+ max-height:400px;
+ min-width:20px;
+ min-height:20px;
+</string>
+     </property>
+     <property name="text">
+      <string>CHG_ON</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="OVERD_ALERT_pushButton">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>160</y>
+       <width>101</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);
+font: 75 11pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(85, 255, 0);
+ border-style: solid;
+ border-width:4px;
+ border-radius:20px;
+ border-color: red;
+ max-width:400px;
+ max-height:400px;
+ min-width:20px;
+ min-height:20px;
+</string>
+     </property>
+     <property name="text">
+      <string>OVERD_
+ALERT</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="TEMP_SEL_pushButton">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>230</y>
+       <width>101</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);
+font: 75 11pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(85, 255, 0);
+ border-style: solid;
+ border-width:4px;
+ border-radius:20px;
+ border-color: red;
+ max-width:400px;
+ max-height:400px;
+ min-width:20px;
+ min-height:20px;
+</string>
+     </property>
+     <property name="text">
+      <string>TEMP_SEL</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="DEVICE_X_READY_pushButton">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>160</y>
+       <width>101</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);
+font: 75 11pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(85, 255, 0);
+ border-style: solid;
+ border-width:4px;
+ border-radius:20px;
+ border-color: red;
+ max-width:400px;
+ max-height:400px;
+ min-width:20px;
+ min-height:20px;
+</string>
+     </property>
+     <property name="text">
+      <string>DEVICE_X
+READY</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="RSNS_pushButton">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>230</y>
+       <width>101</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);
+font: 75 11pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(85, 255, 0);
+ border-style: solid;
+ border-width:4px;
+ border-radius:20px;
+ border-color: red;
+ max-width:400px;
+ max-height:400px;
+ min-width:20px;
+ min-height:20px;
+</string>
+     </property>
+     <property name="text">
+      <string>RSNS</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_3">
+    <property name="geometry">
+     <rect>
+      <x>11</x>
+      <y>330</y>
+      <width>371</width>
+      <height>251</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QWidget" name="layoutWidget_4">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>140</y>
+       <width>151</width>
+       <height>44</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_10">
+      <item>
+       <widget class="QLabel" name="label_11">
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:600; color:#0000ff;&quot;&gt;Over Voltage Delay&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="OVD_comboBox"/>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="layoutWidget_3">
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>80</y>
+       <width>151</width>
+       <height>44</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_9">
+      <item>
+       <widget class="QLabel" name="label_10">
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:600; color:#0000ff;&quot;&gt;Over Circuit Threshold&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="OCT_comboBox"/>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="layoutWidget_2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>80</y>
+       <width>151</width>
+       <height>44</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_8">
+      <item>
+       <widget class="QLabel" name="label_9">
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:600; color:#0000ff;&quot;&gt;Over Ciruit Delay&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="OCD_comboBox"/>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="layoutWidget_6">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>200</y>
+       <width>151</width>
+       <height>44</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_12">
+      <item>
+       <widget class="QLabel" name="label_13">
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:600; color:#0000ff;&quot;&gt;  Under Voltage Delay&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="UVD_comboBox"/>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="layoutWidget_5">
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>140</y>
+       <width>151</width>
+       <height>44</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_11">
+      <item>
+       <widget class="QLabel" name="label_12">
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:600; color:#0000ff;&quot;&gt;Over Voltage Threshold&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="OVT_comboBox"/>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="layoutWidget_7">
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>200</y>
+       <width>153</width>
+       <height>44</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_13">
+      <item>
+       <widget class="QLabel" name="label_14">
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:600; color:#0000ff;&quot;&gt;Under Voltage Threshold&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="UVT_comboBox"/>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>20</y>
+       <width>151</width>
+       <height>44</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:600; color:#0000ff;&quot;&gt;  Short Circuit Threshold&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="SCT_comboBox"/>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="layoutWidget_8">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>151</width>
+       <height>44</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:600; color:#0000ff;&quot;&gt;Short Circuit Delay&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="SCD_comboBox"/>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_5">
+    <property name="geometry">
+     <rect>
+      <x>191</x>
+      <y>600</y>
+      <width>391</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QLabel" name="label_15">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>0</y>
+       <width>201</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; text-decoration: underline; color:#0055ff;&quot;&gt;Coulomb Counter Configuration&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="layoutWidget_9">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>371</width>
+       <height>33</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLineEdit" name="lineEdit_7">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>31</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(0, 202, 0);
+font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+font: 75  &quot;MS Shell Dlg 2&quot;;
+color: rgb(255, 255, 255);
+ border-style: solid;
+ border-width:2px;
+ border-radius:20px;
+ border-color: white;
+ </string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_8">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>31</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(0, 202, 0);
+font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(255, 255, 255);
+ border-style: solid;
+ border-width:2px;
+ border-radius:20px;
+ border-color: white;
+ </string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_9">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>31</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(0, 202, 0);
+font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(255, 255, 255);
+ border-style: solid;
+ border-width:2px;
+ border-radius:20px;
+ border-color: white;
+ </string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_10">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>31</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(0, 202, 0);
+font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(255, 255, 255);
+ border-style: solid;
+ border-width:2px;
+ border-radius:20px;
+ border-color: white;
+ </string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_11">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>31</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(0, 202, 0);
+font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(255, 255, 255);
+ border-style: solid;
+ border-width:2px;
+ border-radius:20px;
+ border-color: white;
+ </string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_12">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>31</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(0, 202, 0);
+font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(255, 255, 255);
+ border-style: solid;
+ border-width:2px;
+ border-radius:20px;
+ border-color: white;
+ </string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>261</width>
+      <height>291</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QPushButton" name="ADC_EN_pushButton">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>230</y>
+       <width>101</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);
+font: 75 11pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(85, 255, 0);
+ border-style: solid;
+ border-width:4px;
+ border-radius:20px;
+ border-color: red;
+ max-width:400px;
+ max-height:400px;
+ min-width:20px;
+ min-height:20px;
+</string>
+     </property>
+     <property name="text">
+      <string>ADC_EN</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="LOAD_PRESENT_pushButton">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>230</y>
+       <width>101</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);
+font: 75 11pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(85, 255, 0);
+ border-style: solid;
+ border-width:4px;
+ border-radius:20px;
+ border-color: red;
+ max-width:400px;
+ max-height:400px;
+ min-width:20px;
+ min-height:20px;
+</string>
+     </property>
+     <property name="text">
+      <string>LOAD
+PRESENT</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="UV_pushButton">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>90</y>
+       <width>101</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);
+font: 75 11pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(85, 255, 0);
+ border-style: solid;
+ border-width:4px;
+ border-radius:20px;
+ border-color: red;
+ max-width:400px;
+ max-height:400px;
+ min-width:20px;
+ min-height:20px;
+</string>
+     </property>
+     <property name="text">
+      <string>UV</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="OCD_pushButton">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>160</y>
+       <width>101</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);
+font: 75 11pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(85, 255, 0);
+ border-style: solid;
+ border-width:4px;
+ border-radius:20px;
+ border-color: red;
+ max-width:400px;
+ max-height:400px;
+ min-width:20px;
+ min-height:20px;
+</string>
+     </property>
+     <property name="text">
+      <string>OCD</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="CC_READY_pushButton">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>90</y>
+       <width>101</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);
+font: 75 11pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(85, 255, 0);
+ border-style: solid;
+ border-width:4px;
+ border-radius:20px;
+ border-color: red;
+ max-width:400px;
+ max-height:400px;
+ min-width:20px;
+ min-height:20px;
+</string>
+     </property>
+     <property name="text">
+      <string>CC_READY</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="OV_Button">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>101</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);
+font: 75 12pt &quot;Tahoma&quot;;
+
+background-color: rgb(85, 255, 0);
+ border-style: solid;
+ border-width:4px;
+ border-radius:20px;
+ border-color: red;
+ max-width:400px;
+ max-height:400px;
+ min-width:20px;
+ min-height:20px;
+</string>
+     </property>
+     <property name="text">
+      <string>OV</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="SCD_pushButton">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>160</y>
+       <width>101</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);
+font: 75 11pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(85, 255, 0);
+ border-style: solid;
+ border-width:4px;
+ border-radius:20px;
+ border-color: red;
+ max-width:400px;
+ max-height:400px;
+ min-width:20px;
+ min-height:20px;
+</string>
+     </property>
+     <property name="text">
+      <string>SCD</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="pushButton_3">
+    <property name="geometry">
+     <rect>
+      <x>331</x>
+      <y>40</y>
+      <width>86</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 11pt &quot;MS Shell Dlg 2&quot; ;
+color:rgb(255, 255, 255);
+ border-style: solid;
+ border-width:3px;
+ border-radius:40px;
+background-color: rgb(255, 85, 0);
+ border-color: green;
+ max-width:400px;
+ max-height:400px;
+ min-width:60px;
+ min-height:60px;
+</string>
+    </property>
+    <property name="text">
+     <string>SLEEP</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>321</x>
+      <y>0</y>
+      <width>121</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#0000ff;&quot;/&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; text-decoration: underline; color:#0000ff;&quot;&gt;CONTROL BOX&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="Line" name="line_2">
+    <property name="geometry">
+     <rect>
+      <x>1</x>
+      <y>310</y>
+      <width>751</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_4">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>350</y>
+      <width>161</width>
+      <height>221</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QPushButton" name="RESET_pushButton">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>151</y>
+       <width>80</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-color: orange;
+font: 75 11pt &quot;MS Shell Dlg 2&quot;;
+border-radius:20px;
+background-color: rgb(0, 170, 255);
+background-color: rgb(250, 71, 0);</string>
+     </property>
+     <property name="text">
+      <string>RESET</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="LOAD_CONFIG_pushButton">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>30</y>
+       <width>102</width>
+       <height>102</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 0);
+font: 75 11pt &quot;MS Shell Dlg 2&quot;;
+background-color: blue;
+ border-style: solid;
+ border-width:1px;
+ border-radius:20px;
+ border-color: red;
+ max-width:400px;
+ max-height:400px;
+ min-width:20px;
+ min-height:20px;
+</string>
+     </property>
+     <property name="text">
+      <string>LOAD 
+CONFIG</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
-     <x>280</x>
-     <y>10</y>
-     <width>141</width>
-     <height>31</height>
+     <x>0</x>
+     <y>0</y>
+     <width>742</width>
+     <height>21</height>
     </rect>
    </property>
-   <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#0000ff;&quot;&gt;CONTROL BOX&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-   </property>
   </widget>
-  <widget class="Line" name="line">
-   <property name="geometry">
-    <rect>
-     <x>-20</x>
-     <y>539</y>
-     <width>761</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="orientation">
-    <enum>Qt::Horizontal</enum>
-   </property>
-  </widget>
-  <widget class="QWidget" name="layoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>200</x>
-     <y>320</y>
-     <width>151</width>
-     <height>44</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout_2">
-    <item>
-     <widget class="QLabel" name="label_3">
-      <property name="text">
-       <string>  Short Circuit Threshold</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QComboBox" name="comboBox_2"/>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="layoutWidget_2">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>380</y>
-     <width>151</width>
-     <height>44</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout_8">
-    <item>
-     <widget class="QLabel" name="label_9">
-      <property name="text">
-       <string>    Over Ciruit Delay</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QComboBox" name="comboBox_8"/>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="layoutWidget_3">
-   <property name="geometry">
-    <rect>
-     <x>200</x>
-     <y>380</y>
-     <width>151</width>
-     <height>44</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout_9">
-    <item>
-     <widget class="QLabel" name="label_10">
-      <property name="text">
-       <string> Over Circuit Threshold</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QComboBox" name="comboBox_9"/>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="layoutWidget_4">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>440</y>
-     <width>151</width>
-     <height>44</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout_10">
-    <item>
-     <widget class="QLabel" name="label_11">
-      <property name="text">
-       <string>   Over Voltage Delay</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QComboBox" name="comboBox_10"/>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="layoutWidget_5">
-   <property name="geometry">
-    <rect>
-     <x>200</x>
-     <y>440</y>
-     <width>151</width>
-     <height>44</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout_11">
-    <item>
-     <widget class="QLabel" name="label_12">
-      <property name="text">
-       <string>Over Voltage Threshold</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QComboBox" name="comboBox_11"/>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="layoutWidget_6">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>500</y>
-     <width>151</width>
-     <height>44</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout_12">
-    <item>
-     <widget class="QLabel" name="label_13">
-      <property name="text">
-       <string>  Under Voltage Delay</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QComboBox" name="comboBox_12"/>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="layoutWidget_7">
-   <property name="geometry">
-    <rect>
-     <x>200</x>
-     <y>500</y>
-     <width>152</width>
-     <height>44</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout_13">
-    <item>
-     <widget class="QLabel" name="label_14">
-      <property name="text">
-       <string>Under Voltage Threshold</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QComboBox" name="comboBox_13"/>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QLabel" name="label_15">
-   <property name="geometry">
-    <rect>
-     <x>250</x>
-     <y>560</y>
-     <width>201</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; text-decoration: underline; color:#00ffff;&quot;&gt; Coulomb Counter Configuration&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton">
-   <property name="geometry">
-    <rect>
-     <x>569</x>
-     <y>410</y>
-     <width>131</width>
-     <height>71</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>LOAD CONFIG</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_2">
-   <property name="geometry">
-    <rect>
-     <x>590</x>
-     <y>491</y>
-     <width>80</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>RESET</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>320</y>
-     <width>151</width>
-     <height>44</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <widget class="QLabel" name="label_2">
-      <property name="text">
-       <string>     Short Circuit Delay</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QComboBox" name="comboBox"/>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="">
-   <property name="geometry">
-    <rect>
-     <x>220</x>
-     <y>583</y>
-     <width>271</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <layout class="QHBoxLayout" name="horizontalLayout">
-    <item>
-     <widget class="QLineEdit" name="lineEdit"/>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="lineEdit_2"/>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="lineEdit_4"/>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="lineEdit_3"/>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="lineEdit_5"/>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="lineEdit_6"/>
-    </item>
-   </layout>
-  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>
