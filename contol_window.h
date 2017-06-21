@@ -39,10 +39,10 @@ public slots:
 private slots:
 
     void initControls();
+    void initParamAndDefaultParam(); //!Initializes param and default_param
     void update_status_indicator();
     void reset();
     void readSerial();
-
 //    void on_OV_Button_clicked();
 
 //    void on_CC_READY_pushButton_clicked();
@@ -80,6 +80,22 @@ private slots:
     void on_CCC1_pushButton_clicked();
 
     void on_RESET_pushButton_clicked();
+
+    void on_SCD_comboBox_currentIndexChanged(const QString &arg1);
+
+    void on_SCT_comboBox_currentIndexChanged(const QString &arg1);
+
+    void on_OCD_comboBox_currentIndexChanged(const QString &arg1);
+
+    void on_OCT_comboBox_currentTextChanged(const QString &arg1);
+
+    void on_OVD_comboBox_currentIndexChanged(const QString &arg1);
+
+    void on_OVT_comboBox_currentIndexChanged(const QString &arg1);
+
+    void on_UVD_comboBox_currentIndexChanged(const QString &arg1);
+
+    void on_UVT_comboBox_currentIndexChanged(const QString &arg1);
 
 private:
 

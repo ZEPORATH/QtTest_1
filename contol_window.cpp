@@ -23,7 +23,8 @@ Contol_window::Contol_window(QWidget *parent) :
     qDebug()<<string_recv_buffer;
 
     initControls();
-    initmap();
+    initParamAndDefaultParam();
+//    initmap();
 }
 
 Contol_window::~Contol_window()
@@ -85,6 +86,29 @@ void Contol_window::initParamAndDefaultParam()
 {
     QStringList key_list ;
     key_list.push_back("ADC_EN");
+    key_list.push_back("DSG_ON");
+    key_list.push_back("CHG_ON");
+    key_list.push_back("DEVICE_XREADY");
+    key_list.push_back("TEMP_SEL");
+    key_list.push_back("CC");
+    key_list.push_back("DELAY_DIS");
+    key_list.push_back("OVRD_ALERT");
+    key_list.push_back("RSNS");
+    key_list.push_back("SLEEP");
+
+    for(auto a: key_list){
+        default_param[a] = 2;
+    }
+    //Initialize default params for dropdown comboBox
+    default_param["SCD"] = 70;
+    default_param["OCD"] = 8;
+    default_param["OVD"] = 1;
+    default_param["OVT"] = 22;
+    default_param["UVD"] = 1;
+    default_param["UVT"] = 8;
+    default_param["SCT"] = 44;
+    default_param["OCT"] = 17;
+    param = default_param;
 }
 int Contol_window::changeColor(QPushButton* button, QString* button_color/*,QString* parent_color*/){
     if (*button_color == QString("green")){
@@ -404,3 +428,54 @@ void Contol_window::on_RESET_pushButton_clicked()
 }
 
 
+
+void Contol_window::on_SCD_comboBox_currentIndexChanged(const QString &arg1)
+{
+    param["SCD"] = ui->SCD_comboBox->currentText().toInt(); //!Convert the string number to int as param<QString,int>
+
+}
+
+void Contol_window::on_SCT_comboBox_currentIndexChanged(const QString &arg1)
+{
+    param["SCT"] = ui->SCT_comboBox->currentText().toInt(); //!Convert the string to int number to int param<QString, int>
+}
+
+
+
+void Contol_window::on_OCD_comboBox_currentIndexChanged(const QString &arg1)
+{
+    param["OCD"] = ui->OCD_comboBox->currentText().toInt();//!Convert the string to int number to int param<QString, int>
+
+}
+
+void Contol_window::on_OCT_comboBox_currentTextChanged(const QString &arg1)
+{
+    param["OCT"]  = ui->OCT_comboBox->currentText().toInt();//!Convert the string to int number to int param<QString, int>
+
+}
+
+void Contol_window::on_OVD_comboBox_currentIndexChanged(const QString &arg1)
+{
+    param["OVD"] = ui->OVD_comboBox->currentText().toInt();//!Convert the string to int number to int param<QString, int>
+
+}
+
+void Contol_window::on_OVT_comboBox_currentIndexChanged(const QString &arg1)
+{
+    param["OVT"] = ui->OVT_comboBox->currentText().toInt();//!Convert the string to int number to int param<QString, int>
+
+}
+
+
+
+void Contol_window::on_UVD_comboBox_currentIndexChanged(const QString &arg1)
+{
+    param["UVD"] = ui->UVD_comboBox->currentText().toInt();//!Convert the string to int number to int param<QString, int>
+}
+
+
+
+void Contol_window::on_UVT_comboBox_currentIndexChanged(const QString &arg1)
+{
+    param["UVT"] = ui->UVT_comboBox->currentText().toInt();
+}
