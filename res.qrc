@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/new/icons">
+        <file>icons/Wwalczyszyn-Iwindows-Control-Panel.ico</file>
+        <file>icons/Pelfusion-Flat-File-Type-Log.ico</file>
+        <file>icons/Double-J-Design-Electronics-LCD.ico</file>
+        <file>icons/Ampeross-Qetto-2-Usb.ico</file>
+        <file>icons/Hopstarter-Sleek-Xp-Basic-Close.ico</file>
+        <file>icons/Zerode-Plump-Document-help.ico</file>
+        <file>icons/Oxygen-Icons.org-Oxygen-Apps-system-software-update.ico</file>
+        <file>icons/Oxygen-Icons.org-Oxygen-Actions-help-about.ico</file>
+    </qresource>
+</RCC>

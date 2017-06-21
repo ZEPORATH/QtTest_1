@@ -80,6 +80,12 @@ void Contol_window::initControls(){
 
 
 }
+
+void Contol_window::initParamAndDefaultParam()
+{
+    QStringList key_list ;
+    key_list.push_back("ADC_EN");
+}
 int Contol_window::changeColor(QPushButton* button, QString* button_color/*,QString* parent_color*/){
     if (*button_color == QString("green")){
     button->setStyleSheet("font: 75 12pt \"Tahoma\";\
@@ -374,8 +380,9 @@ void Contol_window::on_LOAD_CONFIG_pushButton_clicked()
 
     QString msg = "Hello from LOAD_CONFIG_BUTTON \n";//Change the message to required message type.
     //Extract the value from the map
-    foreach (int value, param)
-        send_msg+=" "+value;
+    for (auto e: param.keys()){
+        send_msg.append(" ").append(QString::number(param.value(e)));
+    }
      qDebug()<<"Sending messgae :"<<send_msg;
      send_msg = "Hello arduino from QT";
     writeSerial(send_msg);
