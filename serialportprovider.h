@@ -20,7 +20,7 @@ public:
         }
         return port;
     }
-
+    bool writing_to_arduino = false;
 
 };
 

@@ -24,34 +24,13 @@ Contol_window::Contol_window(QWidget *parent) :
 
     initControls();
     initParamAndDefaultParam();
-//    initmap();
 }
 
 Contol_window::~Contol_window()
 {
     delete ui;
 }
-void Contol_window::initmap(){
-    //Make the parameters 1 for True, or 0 for false
-    default_param["DEVICCE_READY"] = 0;
-    default_param["OVRD_ALERT"] = 0;
-    default_param["ADC_EN"] = 0;
-    default_param["TEMP_SEC"] = 0;
-    default_param["DELAY_DIS"] = 0;
-    default_param["CC"] = 0;
-    default_param["DSG_ON"] = 0;
-    default_param["CHG_ON"] = 0;
-    default_param["RSNS"] = 0;
-    default_param["SCD"] = 70;
-    default_param["OCD"] = 8;
-    default_param["OVD"] = 1;
-    default_param["OVT"] = 22;
-    default_param["UVD"] = 1;
-    default_param["UVT"] = 8;
-    default_param["SCT"] = 44;
-    default_param["OCT"] = 17;
 
-}
 
 void Contol_window::getSharedString(QString rec)
 {   qDebug()<<rec;
@@ -146,6 +125,7 @@ int Contol_window::changeColor(QPushButton* button, QString* button_color/*,QStr
 
 void Contol_window::readSerial()
 {
+    if(!SerialPortProvider::getInstance()->writing_to_arduino)
     serialData = SerialPortProvider::getInstance()->arduino->readAll();
     QString str = "";
     serialBuffer =serialBuffer+QString::fromStdString(serialData.toStdString());
@@ -164,7 +144,9 @@ void Contol_window::writeSerial(QString msg)
 {
     QByteArray data (msg.toStdString().c_str());
     qDebug()<<"got message from control box \n";
+    SerialPortProvider::getInstance()->writing_to_arduino = true;
     SerialPortProvider::getInstance()->arduino->write(data);
+    SerialPortProvider::getInstance()->writing_to_arduino = false;
 //    nanosleep();
 //    SerialPort1Provider::getInstance()->arduino->clear();
 }
@@ -408,7 +390,7 @@ void Contol_window::on_LOAD_CONFIG_pushButton_clicked()
         send_msg.append(" ").append(QString::number(param.value(e)));
     }
      qDebug()<<"Sending messgae :"<<send_msg;
-     send_msg = "Hello arduino from QT";
+
     writeSerial(send_msg);
     send_msg = "";
     QMessageBox msgBox;

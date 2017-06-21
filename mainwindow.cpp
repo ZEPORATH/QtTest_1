@@ -51,29 +51,6 @@ MainWindow::~MainWindow()
 
 }
 
-//void MainWindow::getPorts()
-//{
-//    ui->SerialPortBox->clear();
-//    QString name;
-//    const auto infos = QSerialPortInfo::availablePorts();
-//    for (const QSerialPortInfo &info : infos) {
-//        ui->SerialPortBox->addItem(info.portName());
-//    }
-
-//}
-
-//void MainWindow::getBaudRate()
-//{
-//    ui->BaudRateBox->addItem(QStringLiteral("4800"), QSerialPort::Baud4800);
-//    ui->BaudRateBox->addItem(QStringLiteral("9600"), QSerialPort::Baud9600);
-//    ui->BaudRateBox->addItem(QStringLiteral("19200"), QSerialPort::Baud19200);
-//    ui->BaudRateBox->addItem(QStringLiteral("38400"), QSerialPort::Baud38400);
-//    ui->BaudRateBox->addItem(QStringLiteral("57600"), QSerialPort::Baud57600);
-//    ui->BaudRateBox->addItem(QStringLiteral("115200"), QSerialPort::Baud115200);
-//    ui->BaudRateBox->addItem(tr("Custom"));
-
-
-//}
 
 bool MainWindow::openSerialPort()
 {
@@ -107,14 +84,16 @@ void MainWindow::showStatusMessage(const QString &message)
 }
 void MainWindow::readSerial()
 {
-    //    QStringList buffer_split = serialBuffer.split("\n");
 
-    {
+
+
+        if(!SerialPortProvider::getInstance()->writing_to_arduino)
         serialData = SerialPortProvider::getInstance()->arduino->readAll();
+        else return;
         QString str = "";
         serialBuffer =serialBuffer+QString::fromStdString(serialData.toStdString());
         serialData.clear();
-    }
+
     if(serialBuffer.contains("\r\n")){
         emit setSharedString(serialBuffer);
         updateLCDs(serialBuffer);
@@ -180,6 +159,29 @@ void MainWindow::on_start_push_button_clicked()
     }
 
 
+    //void MainWindow::getPorts()
+    //{
+    //    ui->SerialPortBox->clear();
+    //    QString name;
+    //    const auto infos = QSerialPortInfo::availablePorts();
+    //    for (const QSerialPortInfo &info : infos) {
+    //        ui->SerialPortBox->addItem(info.portName());
+    //    }
+
+    //}
+
+    //void MainWindow::getBaudRate()
+    //{
+    //    ui->BaudRateBox->addItem(QStringLiteral("4800"), QSerialPort::Baud4800);
+    //    ui->BaudRateBox->addItem(QStringLiteral("9600"), QSerialPort::Baud9600);
+    //    ui->BaudRateBox->addItem(QStringLiteral("19200"), QSerialPort::Baud19200);
+    //    ui->BaudRateBox->addItem(QStringLiteral("38400"), QSerialPort::Baud38400);
+    //    ui->BaudRateBox->addItem(QStringLiteral("57600"), QSerialPort::Baud57600);
+    //    ui->BaudRateBox->addItem(QStringLiteral("115200"), QSerialPort::Baud115200);
+    //    ui->BaudRateBox->addItem(tr("Custom"));
+
+
+    //}
 }
 
 
