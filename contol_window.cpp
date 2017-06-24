@@ -182,6 +182,7 @@ void Contol_window::update_status_indicator(){
     QString res = string_recv_buffer;
 
     QStringList res_list = res.split(" ");
+    if (res_list.length()>=39){
 
     if (res_list[33]=="34"){
         changeColor_indicators(ui->UV_pushButton,"green");
@@ -220,7 +221,7 @@ void Contol_window::update_status_indicator(){
     else{
         changeColor_indicators(ui->LOAD_PRESENT_pushButton,"red");
     }
-
+}
 
 }
 

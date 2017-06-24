@@ -89,7 +89,11 @@ void MainWindow::readSerial()
 
         if(!SerialPortProvider::getInstance()->writing_to_arduino)
         serialData = SerialPortProvider::getInstance()->arduino->readAll();
-        else return;
+        else {
+            serialData.clear();
+            serialBuffer="";
+            return;
+        }
         QString str = "";
         serialBuffer =serialBuffer+QString::fromStdString(serialData.toStdString());
         serialData.clear();
@@ -110,6 +114,8 @@ void MainWindow::updateLCDs(QString serialBuffer1)
     //    qDebug()<<serialBuffer<<"\n";
     string_recv_buffer = serialBuffer1;
     QStringList buffer_split = serialBuffer1.split(" ");
+    if (buffer_split.length()>=30){
+
 
     ui->cell_1_lcd->display(buffer_split[0]);
     ui->temp_cell_1_lcd->display(buffer_split[1]);
@@ -148,7 +154,7 @@ void MainWindow::updateLCDs(QString serialBuffer1)
     ui->ADC_OFFSET_LCD->display(buffer_split[30]);
 
 
-
+}
 }
 
 
