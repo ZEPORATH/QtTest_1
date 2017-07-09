@@ -1,8 +1,5 @@
 #ifndef CONTOL_WINDOW_H
 #define CONTOL_WINDOW_H
-
-
-
 #include <QMainWindow>
 #include <QString>
 #include <QPushButton>

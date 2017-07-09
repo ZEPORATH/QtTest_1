@@ -225,10 +225,6 @@ void Contol_window::update_status_indicator(){
 
 }
 
-void Contol_window::reset(){
-    param = default_param;
-}
-
 
 
 void Contol_window::on_ADC_EN_pushButton_clicked()
@@ -236,8 +232,8 @@ void Contol_window::on_ADC_EN_pushButton_clicked()
     static QString local_button_color = button_color;
     int res = changeColor(ui->ADC_EN_pushButton, &local_button_color);
     qDebug() << res;
-    if (res == 1)param["ADC_EN"] = 1;
-    else param["ADC_EN"] = 0;
+    if (res == 1)param["ADC_EN"] = 1;//Value pushed to arduino on button clicked to RED
+    else param["ADC_EN"] = 2;//Value pushed to arduino on button clicked to GREEN
 }
 
 void Contol_window::on_DSG_ON_pushButton_clicked()
@@ -314,15 +310,15 @@ void Contol_window::on_RSNS_pushButton_clicked()
     if(res==1){
 
     ui->SCT_comboBox->clear();
-    ui->SCT_comboBox->addItems(sequence_len_sct);
+    ui->SCT_comboBox->addItems(sequence_len_sct_rsns);
     ui->OCT_comboBox->clear();
-    ui->OCT_comboBox->addItems(sequence_len_oct);
+    ui->OCT_comboBox->addItems(sequence_len_oct_rsns);
     param["RSNS"] = 1;
     }else{
         ui->SCT_comboBox->clear();
-        ui->SCT_comboBox->addItems(sequence_len_sct_rsns);
+        ui->SCT_comboBox->addItems(sequence_len_sct);
         ui->OCT_comboBox->clear();
-        ui->OCT_comboBox->addItems(sequence_len_oct_rsns);
+        ui->OCT_comboBox->addItems(sequence_len_oct);
         param["RSNS"]= 2;
 
     }
@@ -375,7 +371,7 @@ void Contol_window::on_SLEEP_pushButton_clicked()
                                              );
         local_button_color = "green";
          qDebug() << "Inside else loop button_4 green\n";
-//         return 2;
+
          param["SLEEP"] = 2;
 
     }
@@ -383,10 +379,7 @@ void Contol_window::on_SLEEP_pushButton_clicked()
 
 void Contol_window::on_LOAD_CONFIG_pushButton_clicked()
 {
-
-
-    QString msg = "Hello from LOAD_CONFIG_BUTTON \n";//Change the message to required message type.
-    //Extract the value from the map
+ //Extract the value from the map
     for (auto e: param.keys()){
         send_msg.append(" ").append(QString::number(param.value(e)));
     }
@@ -461,4 +454,19 @@ void Contol_window::on_UVD_comboBox_currentIndexChanged(const QString &arg1)
 void Contol_window::on_UVT_comboBox_currentIndexChanged(const QString &arg1)
 {
     param["UVT"] = ui->UVT_comboBox->currentText().toInt();
+}
+
+void Contol_window::reset(){
+    param = default_param;
+    QString color = "green";
+    changeColor(ui->ADC_EN_pushButton,&color);color = "green";
+    changeColor(ui->DSG_ON_pushButton,&color);color = "green";
+    changeColor(ui->CHG_ON_pushButton,&color);color = "green";
+    changeColor(ui->TEMP_SEL_pushButton,&color);color = "green";
+    changeColor(ui->DEVICE_X_READY_pushButton,&color);color = "green";
+    changeColor(ui->DELAY_DIS_pushButton,&color);color = "green";
+    changeColor(ui->RSNS_pushButton,&color);color = "green";
+    changeColor(ui->CC_pushButton,&color);color = "green";
+    changeColor(ui->OVERD_ALERT_pushButton,&color);color = "green";
+
 }
